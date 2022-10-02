@@ -6,7 +6,7 @@ const handleClick = (course) => {
         courseId: 3,
         userId: 1
     };
-    fetch('https://hackutadev.herokuapp.com/courses/register', {
+    fetch('http://34.71.56.116:8080/courses/register', {
         method: "POST",
         mode: 'no-cors',
         body: JSON.stringify(_data),
@@ -37,7 +37,7 @@ export default class Classes extends React.Component {
         this.renderMyData();
     }
     renderMyData() {
-        fetch('https://hackutadev.herokuapp.com/courses/' + this.state.year + '/' + this.state.term)
+        fetch('http://34.71.56.116:8080/courses/' + this.state.year + '/' + this.state.term)
             .then((response) => response.json())
             .then((responseJson) => {
                 this.setState({ courses: responseJson })
